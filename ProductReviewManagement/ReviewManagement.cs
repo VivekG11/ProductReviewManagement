@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Data;
 
 namespace ProductReviewManagement
 {
@@ -36,11 +38,22 @@ namespace ProductReviewManagement
             products.Add(new ProductReview() { ProductId = 24, UserId = 24, Rating = 7, Review = "Average", isLike = true });
             products.Add(new ProductReview() { ProductId = 25, UserId = 25, Rating = 10, Review = "Good", isLike = true });
 
+            IterateMethod(products);
 
-            foreach(var i in products)
+        }
+        public static void IterateMethod(List<ProductReview> products)
+        {
+            foreach (var i in products)
             {
-                Console.WriteLine("Product Id :"+i.ProductId+", User Id :"+i.UserId+", Rating :"+i.Rating+", REview :"+i.Review);
+                Console.WriteLine("Product Id :" + i.ProductId + ", User Id :" + i.UserId + ", Rating :" + i.Rating + ", REview :" + i.Review);
             }
+        }
+
+        public static void RetrieveTopThreeRecords(List<ProductReview> products)
+        {
+            Console.WriteLine("Top three records are ...");
+            var res = (from product in products orderby product.Rating descending select product).Take(3).ToList();
+            IterateMethod(res);
         }
     }
 }
