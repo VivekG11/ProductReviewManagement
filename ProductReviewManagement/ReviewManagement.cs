@@ -58,6 +58,7 @@ namespace ProductReviewManagement
         }
         public static void Retrieve(List<ProductReview> products)
         {
+            Console.WriteLine("Records greater than 7 rating among 1,11,13 are......");
             var result = (from product in products where product.Rating > 7 && (product.ProductId == 1 || product.ProductId == 11 || product.ProductId == 13) select product ).ToList();
             IterateMethod(result);
         }
