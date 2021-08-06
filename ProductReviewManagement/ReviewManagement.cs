@@ -52,8 +52,14 @@ namespace ProductReviewManagement
         public static void RetrieveTopThreeRecords(List<ProductReview> products)
         {
             Console.WriteLine("Top three records are ...");
+
             var res = (from product in products orderby product.Rating descending select product).Take(3).ToList();
             IterateMethod(res);
+        }
+        public static void Retrieve(List<ProductReview> products)
+        {
+            var result = (from product in products where product.Rating > 7 && (product.ProductId == 1 || product.ProductId == 11 || product.ProductId == 13) select product ).ToList();
+            IterateMethod(result);
         }
     }
 }

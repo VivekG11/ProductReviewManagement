@@ -12,8 +12,8 @@ namespace ProductReviewManagement
             Console.WriteLine("Welcome to Product Review Management......");
             List<ProductReview> products = new List<ProductReview>();
             ReviewManagement.AddProductReview(products);
-            ReviewManagement.RetrieveTopThreeRecords(products);
-
+            // ReviewManagement.RetrieveTopThreeRecords(products);
+            ReviewManagement.Retrieve(products);
         }
     }
 }
