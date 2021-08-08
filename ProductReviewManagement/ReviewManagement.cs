@@ -38,7 +38,7 @@ namespace ProductReviewManagement
             products.Add(new ProductReview() { ProductId = 24, UserId = 24, Rating = 7, Review = "Average", isLike = true });
             products.Add(new ProductReview() { ProductId = 25, UserId = 25, Rating = 10, Review = "Good", isLike = true });
 
-            IterateMethod(products);
+           // IterateMethod(products);
 
         }
         public static void IterateMethod(List<ProductReview> products)
@@ -85,6 +85,14 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine("Product ID :"+i.Id+" Review :"+i.review);
             }
+        }
+
+        public static void SkipTopFiveRecords(List<ProductReview> products)
+        {
+            Console.WriteLine("TProducts After skipping Top 5 records are ....");
+            //Arranging products in order and retrieving records by skpping top 5 records
+            var res = (from product in products orderby product.ProductId ascending select product).Skip(5).ToList();
+            IterateMethod(res);
         }
     }
 }
