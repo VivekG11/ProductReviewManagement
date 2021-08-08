@@ -13,7 +13,8 @@ namespace ProductReviewManagement
             List<ProductReview> products = new List<ProductReview>();
             ReviewManagement.AddProductReview(products);
             // ReviewManagement.RetrieveTopThreeRecords(products);
-            ReviewManagement.Retrieve(products);
+           // ReviewManagement.Retrieve(products);
+            ReviewManagement.RetrieveCount(products);
         }
     }
 }

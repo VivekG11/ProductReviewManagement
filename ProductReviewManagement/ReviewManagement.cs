@@ -59,8 +59,22 @@ namespace ProductReviewManagement
         public static void Retrieve(List<ProductReview> products)
         {
             Console.WriteLine("Records greater than 7 rating among 1,11,13 are......");
+            //retrieving records greater than 7
             var result = (from product in products where product.Rating > 7 && (product.ProductId == 1 || product.ProductId == 11 || product.ProductId == 13) select product ).ToList();
             IterateMethod(result);
+        }
+
+        public static void RetrieveCount(List<ProductReview> products)
+        {
+            int n = 0;
+            //retrieving count grouping by Rating
+            var res = products.GroupBy(p => p.Rating).Select(x => new { ID = x.Key, count = x.Count() });
+            foreach(var i in res)
+            {
+                Console.WriteLine("ProductId :"+i.ID +"count :"+i.count);
+                n++;
+            }
+            Console.WriteLine(n);
         }
     }
 }
