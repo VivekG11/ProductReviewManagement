@@ -37,8 +37,13 @@ namespace ProductReviewManagement
             products.Add(new ProductReview() { ProductId = 23, UserId = 23, Rating = 8, Review = "Good", isLike = true });
             products.Add(new ProductReview() { ProductId = 24, UserId = 24, Rating = 7, Review = "Average", isLike = true });
             products.Add(new ProductReview() { ProductId = 25, UserId = 25, Rating = 10, Review = "Good", isLike = true });
+            products.Add(new ProductReview() { ProductId = 26, UserId = 10, Rating = 7, Review = "Average", isLike = true });
+            products.Add(new ProductReview() { ProductId = 27, UserId = 10, Rating = 9, Review = "Good", isLike = true });
+            products.Add(new ProductReview() { ProductId = 28, UserId = 10, Rating = 10, Review = "Good", isLike = true });
+            products.Add(new ProductReview() { ProductId = 29, UserId = 10, Rating = 5, Review = "Bad", isLike = true });
+            products.Add(new ProductReview() { ProductId = 30, UserId = 10, Rating = 8, Review = "Average", isLike = true });
 
-           // IterateMethod(products);
+            // IterateMethod(products);
 
         }
         public static void IterateMethod(List<ProductReview> products)

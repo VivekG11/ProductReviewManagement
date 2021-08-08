@@ -11,7 +11,7 @@ namespace ProductReviewManagement
         {
             Console.WriteLine("Welcome to Product Review Management......");
             List<ProductReview> products = new List<ProductReview>();
-            ReviewManagement.AddProductReview(products);
+            //ReviewManagement.AddProductReview(products);
             // ReviewManagement.RetrieveTopThreeRecords(products);
             // ReviewManagement.Retrieve(products);
             // ReviewManagement.RetrieveCount(products);
@@ -20,7 +20,8 @@ namespace ProductReviewManagement
             // ProductTable.AddDetails(products);
             // ProductTable.RetrieveBasedOnIsLike(products);
             // ProductTable.FindAvgRating(products);
-            ProductTable.FindReview(products);
+            //ProductTable.FindReview(products);
+            ProductTable.DisplayBasedOnUserId(products);
            
            
         }

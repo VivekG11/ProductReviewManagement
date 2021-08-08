@@ -84,6 +84,18 @@ namespace ProductReviewManagement
                
             }
         }
+        public static void DisplayBasedOnUserId(List<ProductReview> products)
+        {
+            DataTable table = AddDetails(products);
+            var res = from record in table.AsEnumerable() where record.Field<int>("UserId") == 10 orderby record.Field<int>("review") select record;
+            Console.WriteLine("Products with userId 10 are ...");
+            foreach (var i in res)
+            {
+                Console.WriteLine(".");
+                Console.WriteLine($"{i["ProductId"]}");
+
+            }
+        }
         
     }
 }
