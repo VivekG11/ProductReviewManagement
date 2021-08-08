@@ -16,7 +16,10 @@ namespace ProductReviewManagement
             // ReviewManagement.Retrieve(products);
             // ReviewManagement.RetrieveCount(products);
             // ReviewManagement.RetrieveIdAndReview(products);
-            ReviewManagement.SkipTopFiveRecords(products);
+            //ReviewManagement.SkipTopFiveRecords(products);
+            ProductTable.AddDetails(products);
+           
+           
         }
     }
 }

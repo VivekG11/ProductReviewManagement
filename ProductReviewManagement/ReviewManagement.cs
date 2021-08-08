@@ -89,7 +89,7 @@ namespace ProductReviewManagement
 
         public static void SkipTopFiveRecords(List<ProductReview> products)
         {
-            Console.WriteLine("TProducts After skipping Top 5 records are ....");
+            Console.WriteLine("Products After skipping Top 5 records are ....");
             //Arranging products in order and retrieving records by skpping top 5 records
             var res = (from product in products orderby product.ProductId ascending select product).Skip(5).ToList();
             IterateMethod(res);
