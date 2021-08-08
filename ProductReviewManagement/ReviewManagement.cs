@@ -66,15 +66,25 @@ namespace ProductReviewManagement
 
         public static void RetrieveCount(List<ProductReview> products)
         {
-            int n = 0;
+           
             //retrieving count grouping by Rating
-            var res = products.GroupBy(p => p.Rating).Select(x => new { ID = x.Key, count = x.Count() });
+            var res = products.GroupBy(p => p.ProductId).Select(x => new { ID = x.Key, count = x.Count() });
             foreach(var i in res)
             {
-                Console.WriteLine("ProductId :"+i.ID +"count :"+i.count);
-                n++;
+                Console.WriteLine("ProductId :"+i.ID +"  count :"+i.count);
+             
             }
-            Console.WriteLine(n);
+           
+        }
+
+        public static void RetrieveIdAndReview(List<ProductReview> products)
+        {
+            var res = products.Select(s => new { Id = s.ProductId, review = s.Review });
+
+           foreach(var i in res)
+            {
+                Console.WriteLine("Product ID :"+i.Id+" Review :"+i.review);
+            }
         }
     }
 }
