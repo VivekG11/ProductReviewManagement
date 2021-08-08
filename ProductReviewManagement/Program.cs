@@ -18,8 +18,9 @@ namespace ProductReviewManagement
             // ReviewManagement.RetrieveIdAndReview(products);
             //ReviewManagement.SkipTopFiveRecords(products);
             // ProductTable.AddDetails(products);
-            //ProductTable.RetrieveBasedOnIsLike(products);
-           ProductTable.FindAvgRating(products);
+            // ProductTable.RetrieveBasedOnIsLike(products);
+            // ProductTable.FindAvgRating(products);
+            ProductTable.FindReview(products);
            
            
         }

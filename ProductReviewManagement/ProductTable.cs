@@ -55,7 +55,7 @@ namespace ProductReviewManagement
         {
             int count = 0;
             DataTable table = AddDetails(products);
-            //
+          
            var res= from t in table.AsEnumerable() where t.Field<bool>("isLike") == true select t;
             foreach (var i in res)
             {
@@ -69,8 +69,20 @@ namespace ProductReviewManagement
         {
             DataTable table = AddDetails(products);
             double avg = (double)table.AsEnumerable().Average(x => x.Field<int>("Rating"));
-            Console.WriteLine("The average of ratings of all products is...");
-            Console.WriteLine(avg);
+            Console.WriteLine("The average of ratings of all products is..."+avg);
+            
+        }
+        public static void FindReview(List<ProductReview> products)
+        {
+            DataTable table = AddDetails(products);
+            Console.WriteLine("Products with Good Review are ...");
+            var res = from product in table.AsEnumerable() where product.Field<string>("Review") == "Good" select product;
+            foreach (var i in res)
+            {
+                
+                Console.WriteLine($"{i["ProductId"]},{i["Review"]}");
+               
+            }
         }
         
     }
